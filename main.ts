@@ -461,11 +461,11 @@ namespace grove {
         let duration = 0;
         let RangeInCentimeters = 0;
         
-        pins.digitalWritePin(pin, 0);
+        pins.digitalWritePin(DigitalPin, 0);
         control.waitMicros(2);
-        pins.digitalWritePin(pin, 1);
+        pins.digitalWritePin(DigitalPin, 1);
         control.waitMicros(20);
-        pins.digitalWritePin(pin, 0);        
+        pins.digitalWritePin(DigitalPin, 0);        
         duration = pins.pulseIn(pin, PulseValue.High, 50000); // Max duration 50 ms
 
         RangeInCentimeters = duration * 153 / 29 / 2 / 100;
@@ -488,12 +488,12 @@ namespace grove {
         let duration = 0;
         let RangeInInches = 0;
         
-        pins.digitalWritePin(pin, 0);
+        pins.digitalWritePin(DigitalPin, 0);
         control.waitMicros(2);
-        pins.digitalWritePin(pin, 1);
+        pins.digitalWritePin(DigitalPin, 1);
         control.waitMicros(20);
-        pins.digitalWritePin(pin, 0);        
-        duration = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+        pins.digitalWritePin(DigitalPin, 0);        
+        duration = pins.pulseIn(DigitalPin, PulseValue.High, 100000); // Max duration 100 ms
         
         RangeInInches = duration * 153 / 74 / 2 / 100;
         
